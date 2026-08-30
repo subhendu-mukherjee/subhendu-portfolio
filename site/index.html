@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subhendu Mukherjee — Technical Architect · Cloud, AI/ML &amp; Distributed Systems</title>
+<meta name="description" content="Technical Architect with 12+ years designing distributed, cloud-native systems. AI/ML, LLM, RAG and agentic platforms on AWS and Vertex AI. Open to global opportunities.">
+<meta name="author" content="Subhendu Mukherjee">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Subhendu Mukherjee — Technical Architect">
+<meta property="og:description" content="Cloud, AI/ML &amp; distributed systems. 12+ years. Open to global opportunities.">
+<meta property="og:image" content="portrait.webp">
+<meta name="theme-color" content="#F3EEE5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Mrs+Saint+Delafield&display=swap">
+<style>
+:root{
+  --paper:#F3EEE5; --ink:#17150F; --accent:#C05B3B; --accent-dark:#9A4429;
+  --muted:#7A736A; --body:#4A443C; --rule:#D8D1C4; --rule-soft:#E2DBCE;
+  --tile-light:#E4DCCC;
+  --sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --serif:'Bodoni Moda',Didot,'Bodoni 72','Playfair Display',Georgia,serif;
+  --display:'Anton','Arial Narrow',Haettenschweiler,Impact,sans-serif;
+  --script:'Mrs Saint Delafield','Snell Roundhand','Apple Chancery',cursive;
+  --pad:clamp(20px,4.4vw,54px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-dark)}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1.5}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+.serif-h{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(30px,4.2vw,40px);margin:0}
+.serif-h em{font-style:normal;color:var(--accent)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(16px,3vw,40px);padding:clamp(24px,3.4vw,32px) 0 clamp(20px,2.6vw,26px)}
+.sec-head .serif-h{flex:1 1 300px;min-width:0;max-width:420px}
+.sec-head .lede{flex:1 1 260px;max-width:300px;font-size:13.5px;color:#6B6459;padding-top:6px}
+.sec-head .meta{flex:1 1 auto;display:flex;justify-content:flex-end;align-items:center;gap:14px;padding-top:10px}
+
+/* ---------- top bar ---------- */
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:clamp(22px,3vw,40px) 0 26px}
+.topbar .left{display:flex;align-items:center;gap:12px}
+.topbar .right{display:flex;align-items:center;gap:14px}
+
+/* ---------- wordmark ---------- */
+.wordmark{display:block;width:100%;height:auto}
+
+/* ---------- hero ---------- */
+.hero{display:flex;gap:clamp(20px,3.4vw,40px);align-items:flex-start;padding-top:26px}
+.rail{width:26px;flex:0 0 26px;align-self:stretch;padding-top:6px;color:var(--muted)}
+.rail .stack{writing-mode:vertical-rl;display:flex;align-items:center;gap:18px}
+.rail.left .stack{transform:rotate(180deg)}
+.rail.right{display:flex;justify-content:flex-end}
+.rail .tick{display:block;width:1px;height:54px;background:var(--rule)}
+.intro{flex:1 1 420px;min-width:0;padding-top:14px}
+.intro h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.2vw,78px);line-height:.98;letter-spacing:-.01em;margin:12px 0 0}
+.intro .role{color:var(--accent);letter-spacing:.14em;font-size:12px;margin-top:18px}
+.intro .bio{font-size:15.5px;line-height:1.62;color:var(--body);margin-top:18px;max-width:44ch;text-wrap:pretty}
+.intro .sig{font-family:var(--script);font-size:52px;line-height:1;margin-top:22px}
+.portrait{flex:0 0 484px;position:relative;height:520px;min-width:0}
+.portrait .disc{position:absolute;left:24px;top:94px;width:404px;height:404px;border-radius:50%;background:var(--accent)}
+.portrait img.me{position:absolute;left:10px;bottom:0;width:444px;height:413px;display:block}
+.badge{position:absolute;right:0;top:352px;width:132px;height:132px}
+.badge .core{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.35}
+.badge .core span{color:var(--accent);font-size:12px;letter-spacing:.1em}
+
+/* ---------- projects ---------- */
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.3vw,28px)}
+.tile{display:flex;flex-direction:column;gap:14px}
+.tile .art{aspect-ratio:262/186;overflow:hidden}
+.tile .art svg{display:block;width:100%;height:100%}
+.tile .cap{display:flex;gap:12px}
+.tile .num{font-family:var(--serif);font-size:22px;color:var(--accent);line-height:1}
+.tile .name{font-size:13.5px;font-weight:600;line-height:1.35}
+.tile .sub{font-size:12px;color:var(--muted);line-height:1.5;padding-top:3px}
+.fifth{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border:1px solid var(--rule);padding:13px 18px;margin-top:22px}
+.fifth .num{font-family:var(--serif);font-size:20px;color:var(--accent);line-height:1}
+.fifth .name{font-size:13.5px;font-weight:600}
+.fifth .divider{width:1px;height:16px;background:var(--rule)}
+.fifth .txt{font-size:12.5px;color:var(--muted);flex:1 1 320px}
+
+/* ---------- skills ---------- */
+.skills{display:flex;gap:clamp(20px,3vw,36px);padding-top:32px;align-items:stretch}
+.skills .vrule{width:1px;background:var(--rule);flex:0 0 1px}
+.meters{flex:0 0 318px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.meters .rows{display:flex;flex-direction:column;gap:14px}
+.meter{display:flex;align-items:center;gap:14px}
+.meter .k{width:158px;flex:0 0 158px;font-size:10px;letter-spacing:.09em}
+.meter .track{flex:1 1 auto;height:3px;background:#DDD6C8;display:block}
+.meter .fill{display:block;height:3px;background:var(--accent)}
+.meters .also{font-size:11.5px;line-height:1.7;color:#8C8271}
+.quote{flex:0 0 300px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.quote p{font-family:var(--serif);font-size:24px;line-height:1.38;margin:0;text-wrap:pretty}
+.pillars{flex:1 1 320px;min-width:0;display:grid;grid-template-columns:1fr;gap:20px;align-content:center}
+.pillar{display:flex;gap:13px}
+.pillar .ico{width:34px;height:34px;flex:0 0 34px;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.pillar .k{font-size:10.5px}
+.pillar .d{font-size:12px;line-height:1.55;color:#6B6459;padding-top:5px}
+
+/* ---------- impact ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.2vw,26px)}
+.stat{border:1px solid var(--rule);padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px}
+.stat .n{font-family:var(--display);font-size:clamp(40px,4.6vw,52px);line-height:1;color:var(--accent)}
+.stat .d{font-size:12.5px;line-height:1.6;color:#6B6459}
+.spine{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:26px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0}
+.spine .job{font-size:10px;color:var(--muted);white-space:nowrap}
+.spine .job.now{color:var(--accent)}
+.spine .gap{flex:1 1 20px;height:1px;background:var(--rule-soft)}
+
+/* ---------- contact ---------- */
+.contact{display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:flex-start;padding-top:34px}
+.contact .pitch{flex:0 1 470px}
+.contact .pitch p{font-size:13.5px;line-height:1.62;color:#6B6459;margin:16px 0 0;max-width:42ch}
+.qr{display:flex;flex:0 0 auto;align-items:center;gap:18px;padding-top:8px}
+.qr img{width:112px;height:112px;display:block}
+.reach{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:15px;padding-top:6px}
+.reach .row{display:flex;align-items:center;gap:13px;font-size:14px}
+.reach .row a{color:var(--ink)}
+.reach .row a:hover{color:var(--accent)}
+.creds{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:30px;padding:16px 0 clamp(30px,4vw,46px);border-top:1px solid var(--rule)}
+.creds .t{font-size:12.5px;color:var(--body)}
+.creds .divider{width:1px;height:14px;background:var(--rule)}
+.creds .spacer{flex:1 1 auto}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .portrait{flex:0 0 400px;height:440px}
+  .portrait .disc{width:340px;height:340px;top:80px;left:20px}
+  .portrait img.me{width:372px;height:346px;left:8px}
+  .badge{top:296px;width:112px;height:112px}
+  .meter .k{width:130px;flex:0 0 130px}
+  .meters{flex:0 0 270px}
+  .quote{flex:0 0 250px}
+  .quote p{font-size:21px}
+}
+@media (max-width:900px){
+  .rail,.rail.left,.rail.right{display:none}
+  .hero{flex-direction:column-reverse;gap:8px;padding-top:14px}
+  .intro{flex:1 1 auto;width:100%;padding-top:0}
+  .portrait{flex:0 0 auto;width:100%;max-width:460px;height:auto;aspect-ratio:484/470;margin:0 auto}
+  .portrait .disc{left:6%;top:16%;width:76%;height:auto;aspect-ratio:1}
+  .portrait img.me{position:absolute;left:2%;bottom:0;width:94%;height:auto}
+  .badge{right:0;top:auto;bottom:8%;width:104px;height:104px}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skills{flex-wrap:wrap}
+  .skills .vrule{display:none}
+  .meters,.quote,.pillars{flex:1 1 100%}
+  .quote{padding:6px 0 10px}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px}
+  .stats{grid-template-columns:1fr}
+  .spine .gap{display:none}
+  .spine{gap:8px 18px}
+}
+@media (max-width:560px){
+  body{font-size:14.5px}
+  .tiles{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .topbar .right .lbl{display:none}
+  .intro .sig{font-size:38px}
+  .meter .k{width:118px;flex:0 0 118px}
+  .qr{padding-top:4px}
+  .creds{gap:10px}
+  .creds .divider,.creds .spacer{display:none}
+}
+@media print{
+  .badge{display:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="topbar">
+    <div class="left">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C05B3B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg>
+      <span class="lbl">Technical Architect &middot; AI / ML</span>
+    </div>
+    <div class="right">
+      <span class="lbl">Open to global opportunities</span>
+      <svg width="46" height="10" viewBox="0 0 46 10" fill="none" stroke="#17150F" stroke-width="1.3" aria-hidden="true"><path d="M0 5h44M39 1l5 4-5 4"/></svg>
+    </div>
+  </header>
+
+  <svg class="wordmark" viewBox="0 0 1132 186" role="img" aria-label="Portfolio">
+    <text x="0" y="176" textLength="1132" lengthAdjust="spacingAndGlyphs" font-family="Anton, 'Arial Narrow', Haettenschweiler, Impact, sans-serif" font-size="232" fill="#17150F">PORTFOLIO</text>
+  </svg>
+
+  <section class="hero">
+    <div class="rail left" aria-hidden="true">
+      <div class="stack"><span class="lbl">Cloud &amp; Serverless</span><span class="tick"></span><span class="lbl">LLM &middot; RAG &middot; Agentic AI</span></div>
+    </div>
+
+    <div class="intro">
+      <span class="lbl" style="color:var(--muted);letter-spacing:.24em">Hello, I&rsquo;m</span>
+      <h1>SUBHENDU<br>MUKHERJEE</h1>
+      <p class="lbl role">Technical Architect &middot; Cloud, AI/ML &amp; Distributed Systems</p>
+      <p class="bio">12+ years designing distributed, cloud-native systems across insurance, logistics, education and healthcare. Today I build LLM, RAG and agentic AI platforms on AWS and Vertex AI &mdash; production-grade, not proofs of concept.</p>
+      <p class="sig">Subhendu Mukherjee</p>
+    </div>
+
+    <div class="portrait">
+      <div class="disc" aria-hidden="true"></div>
+      <img class="me" src="portrait.webp" alt="Subhendu Mukherjee" width="888" height="826">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 132 132" width="100%" height="100%">
+          <defs><path id="badgearc" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+          <circle cx="66" cy="66" r="65" fill="#F3EEE5" stroke="#D8D1C4" stroke-width="1"/>
+          <text font-family="Archivo, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#7A736A">
+            <textPath href="#badgearc" startOffset="2%">AVAILABLE WORLDWIDE &middot; 30-DAY NOTICE &middot; RELOCATION OK &middot;</textPath>
+          </text>
+        </svg>
+        <div class="core"><span class="lbl">Open<br>for new<br>roles</span></div>
+      </div>
+    </div>
+
+    <div class="rail right" aria-hidden="true">
+      <div class="stack"><span class="lbl">Distributed Systems</span><span class="tick"></span><span class="lbl">Forward Deployed Eng.</span></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="projects">
+    <div class="sec-head">
+      <h2 class="serif-h">SELECTED<br><em>AI/ML PROJECTS</em></h2>
+      <p class="lede">Hands-on machine learning and applied AI work built end to end &mdash; ingestion, modelling, evaluation and deployment.</p>
+      <div class="meta">
+        <span class="lbl" style="color:var(--muted)">2026 &middot; Five projects</span>
+        <svg width="40" height="10" viewBox="0 0 40 10" fill="none" stroke="#C05B3B" stroke-width="1.3" aria-hidden="true"><path d="M0 5h38M33 1l5 4-5 4"/></svg>
+      </div>
+    </div>
+
+    <div class="tiles">
+      <article class="tile">
+        <div class="art" style="background:#17150F">
+          <svg viewBox="0 0 262 186" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g stroke="#5E574C" stroke-width="1"><path d="M34 44h58M34 62h74M34 80h48"/></g>
+            <rect x="26" y="28" width="86" height="70" stroke="#4B453B" stroke-width="1"/>
+            <g stroke="#C05B3B" stroke-width="1.2"><path d="M112 63h34M146 63l-8-5M146 63l-8 5"/></g>
+            <circle cx="176" cy="44" r="7" fill="#C05B3B"/><circle cx="206" cy="63" r="7" fill="#8A4029"/>
+            <circle cx="176" cy="82" r="7" fill="#C05B3B" fill-opacity=".55"/><circle cx="146" cy="110" r="7" fill="#5E574C"/>
+            <g stroke="#6E655A" stroke-width=".9"><path d="M176 44l30 19M206 63l-30 19M176 82l-30 28"/></g>
+            <text x="26" y="152" font-family="Anton, Impact, sans-serif" font-size="26" fill="#F3EEE5">RAG</text>
+            <text x="26" y="170" font-family="Archivo, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#8A8175">30,000+ DOCUMENTS</text>
+          </svg>
+        </div>
+        <div class="cap"><span class="num">01</span><div><div class="name">Enterprise Document Intelligence</div><div class="sub">RAG Q&amp;A &middot; LangChain, Vertex AI Vector Search, OCR</div></div></div>
+      </article>
+
+      <article class="tile">
+        <div class="art" style="background:#C05B3B">
+          <svg viewBox="0 0 262 186" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect x="26" y="30" width="210" height="72" stroke="#F3EEE5" stroke-opacity=".45" stroke-width="1"/>
+            <rect x="52" y="54" width="72" height="26" stroke="#F3EEE5" stroke-width="1.6"/>
+            <g fill="#F3EEE5" fill-opacity=".85"><rect x="56" y="60" width="8" height="14"/><rect x="68" y="60" width="8" height="14"/><rect x="80" y="60" width="8" height="14"/><rect x="92" y="60" width="8" height="14"/><rect x="104" y="60" width="8" height="14"/></g>
+            <rect x="148" y="54" width="72" height="26" fill="#F3EEE5" fill-opacity=".28"/>
+            <rect x="148" y="54" width="72" height="26" stroke="#F3EEE5" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <text x="26" y="152" font-family="Anton, Impact, sans-serif" font-size="26" fill="#F3EEE5">VISION</text>
+            <text x="26" y="170" font-family="Archivo, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#F7E9E2">DETECT &middot; BLUR &middot; PROTECT</text>
+          </svg>
+        </div>
+        <div class="cap"><span class="num">02</span><div><div class="name">Number Plate Privacy Blurring</div><div class="sub">CNN/RCNN detection &middot; OpenCV, real-time inference</div></div></div>
+      </article>
+
+      <article class="tile">
+        <div class="art" style="background:#E4DCCC">
+          <svg viewBox="0 0 262 186" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g stroke="#B9AE99" stroke-width="1"><path d="M26 100h210M26 74h210M26 48h210"/></g>
+            <g fill="#17150F"><rect x="40" y="62" width="16" height="38"/><rect x="68" y="44" width="16" height="56"/><rect x="96" y="76" width="16" height="24"/><rect x="124" y="34" width="16" height="66"/></g>
+            <g fill="#C05B3B"><rect x="152" y="54" width="16" height="46"/><rect x="180" y="40" width="16" height="60"/><rect x="208" y="68" width="16" height="32"/></g>
+            <text x="26" y="152" font-family="Anton, Impact, sans-serif" font-size="26" fill="#17150F">IPL</text>
+            <text x="26" y="170" font-family="Archivo, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#7A736A">OUTCOME PREDICTION</text>
+          </svg>
+        </div>
+        <div class="cap"><span class="num">03</span><div><div class="name">IPL Match Outcome Prediction</div><div class="sub">EDA &amp; classification &middot; XGBoost, Random Forest</div></div></div>
+      </article>
+
+      <article class="tile">
+        <div class="art" style="background:#17150F">
+          <svg viewBox="0 0 262 186" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="88" cy="66" r="40" stroke="#4B453B" stroke-width="1"/>
+            <path d="M88 26a40 40 0 0 1 34.6 60L88 66z" fill="#C05B3B"/>
+            <path d="M88 26a40 40 0 0 0-40 40h40z" fill="#3A342C"/>
+            <g stroke="#6E655A" stroke-width="1"><path d="M160 96V36M160 96h72"/></g>
+            <path d="M160 84c14-4 22-24 34-30s24 6 38-16" stroke="#C05B3B" stroke-width="1.6"/>
+            <text x="26" y="152" font-family="Anton, Impact, sans-serif" font-size="26" fill="#F3EEE5">RISK</text>
+            <text x="26" y="170" font-family="Archivo, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#8A8175">IMBALANCED DATA</text>
+          </svg>
+        </div>
+        <div class="cap"><span class="num">04</span><div><div class="name">Loan Default Prediction</div><div class="sub">Financial risk modelling &middot; ROC-AUC, class balancing</div></div></div>
+      </article>
+    </div>
+
+    <div class="fifth">
+      <span class="num">05</span>
+      <span class="name">CO&#8322; Emission Prediction</span>
+      <span class="divider"></span>
+      <span class="txt">Regression modelling on engine &amp; vehicle characteristics &mdash; Ridge, Random Forest and XGBoost, evaluated on R&#178;, MAE and RMSE.</span>
+    </div>
+  </section>
+
+  <hr class="rule" style="margin-top:34px">
+
+  <section id="skills" class="skills">
+    <div class="meters">
+      <h2 class="serif-h">SKILLS &amp;<br><em>EXPERTISE</em></h2>
+      <div class="rows">
+        <div class="meter"><span class="lbl k">AI/ML &middot; LLM &middot; RAG</span><span class="track"><span class="fill" style="width:88%"></span></span></div>
+        <div class="meter"><span class="lbl k">AWS Cloud &amp; Serverless</span><span class="track"><span class="fill" style="width:95%"></span></span></div>
+        <div class="meter"><span class="lbl k">Node.js &middot; TypeScript</span><span class="track"><span class="fill" style="width:95%"></span></span></div>
+        <div class="meter"><span class="lbl k">Python &middot; PyTorch</span><span class="track"><span class="fill" style="width:82%"></span></span></div>
+        <div class="meter"><span class="lbl k">Distributed Systems</span><span class="track"><span class="fill" style="width:92%"></span></span></div>
+        <div class="meter"><span class="lbl k">Technical Leadership</span><span class="track"><span class="fill" style="width:90%"></span></span></div>
+      </div>
+      <p class="also">Also: Kafka, Docker, Kubernetes, PostgreSQL, MongoDB, DynamoDB, Datadog, CI/CD, IaC</p>
+    </div>
+
+    <div class="vrule"></div>
+
+    <blockquote class="quote">
+      <svg width="46" height="34" viewBox="0 0 46 34" fill="#C05B3B" opacity=".35" aria-hidden="true"><path d="M0 34V18C0 8 6 1.5 17 0l2 6c-6 1.5-9 5-9 10h9v18H0zm27 0V18C27 8 33 1.5 44 0l2 6c-6 1.5-9 5-9 10h9v18H27z"/></svg>
+      <p>I architect resilient, cloud-native platforms &mdash; and bring AI into them where it earns its place.</p>
+    </blockquote>
+
+    <div class="vrule"></div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F3EEE5" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4"/></svg></span>
+        <div><div class="lbl k">RAG &amp; Agentic Systems</div><div class="d">Vector search, LangChain/LangGraph orchestration and MCP tool interfaces running in production.</div></div>
+      </div>
+      <div class="pillar">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F3EEE5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 3 5-7 4 4"/><path d="M3 21h18"/></svg></span>
+        <div><div class="lbl k">Scale by design</div><div class="d">Event-driven AWS architectures serving 500K+ concurrent users at 99.99% uptime.</div></div>
+      </div>
+      <div class="pillar">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F3EEE5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M17 7.5c0-2-2.2-3-5-3s-5 .9-5 2.8c0 4.4 10 2.2 10 6.4 0 2-2.2 3.3-5 3.3s-5-1.1-5-3"/></svg></span>
+        <div><div class="lbl k">Cost discipline</div><div class="d">Re-architected workloads cutting run cost ~88% &mdash; $1,000 to $120 per 1M requests.</div></div>
+      </div>
+      <div class="pillar">
+        <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F3EEE5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-7"/><path d="M9 6l9-2-2 9-4 1-4-4z"/><circle cx="14" cy="10" r="1.6"/></svg></span>
+        <div><div class="lbl k">Forward deployed</div><div class="d">Works beside the customer &mdash; integration, data plumbing and hardening AI for production.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" style="margin-top:34px">
+
+  <section id="impact">
+    <div class="sec-head">
+      <h2 class="serif-h">ENTERPRISE<br><em>IMPACT</em></h2>
+      <p class="lede">Measured outcomes from architecture work delivered for enterprise clients.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">88%</div><div class="lbl">Run-cost reduction</div><p class="d">Lincoln Financial &mdash; re-architected AWS provisioned concurrency into an event-driven EventBridge design, taking cost from $1,000 to $120 per 1M requests.</p></div>
+      <div class="stat"><div class="n">10M+</div><div class="lbl">Streams per month</div><p class="d">NBC Universal &mdash; real-time video processing on AWS Lambda for 500,000 concurrent users at 2-second latency and 99.99% uptime.</p></div>
+      <div class="stat"><div class="n">10,000+</div><div class="lbl">Job records governed</div><p class="d">Mercer MMC &mdash; AI/ML-ready job architecture and workforce intelligence platform, cutting manual data entry by 40%.</p></div>
+    </div>
+    <div class="spine">
+      <span class="lbl job now">LTIMindtree &middot; 2021&ndash;now</span><span class="gap"></span>
+      <span class="lbl job">Capgemini &middot; 2019&ndash;21</span><span class="gap"></span>
+      <span class="lbl job">LearningMate &middot; 2018&ndash;19</span><span class="gap"></span>
+      <span class="lbl job">LNSEL &middot; 2017&ndash;18</span><span class="gap"></span>
+      <span class="lbl job">Beas &middot; 2016&ndash;17</span><span class="gap"></span>
+      <span class="lbl job">Ipeg &middot; 2013&ndash;16</span>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="pitch">
+      <h2 class="serif-h" style="font-size:clamp(28px,4vw,38px)">LET&rsquo;S BUILD<br><em>SOMETHING THAT SCALES</em></h2>
+      <p>Open to Technical Architect, Principal Engineer and Forward Deployed Engineer roles &mdash; on-site globally or remote. 30-day notice period.</p>
+    </div>
+
+    <div class="qr">
+      <a href="https://www.linkedin.com/in/mukherjee-subhendu/" target="_blank" rel="noopener"><img src="qr.png" alt="QR code linking to Subhendu Mukherjee's LinkedIn profile" width="112" height="112"></a>
+      <div>
+        <span class="lbl">Scan to view<br>my LinkedIn</span>
+        <svg width="42" height="30" viewBox="0 0 42 30" fill="none" stroke="#C05B3B" stroke-width="1.2" stroke-linecap="round" style="margin-top:6px" aria-hidden="true"><path d="M40 2C30 2 6 4 3 20"/><path d="M2 13l1 8 8-3"/></svg>
+      </div>
+    </div>
+
+    <div class="reach">
+      <div class="row">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C05B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
+        <a href="mailto:subhendu.mukherjee.tech@gmail.com">subhendu.mukherjee.tech@gmail.com</a>
+      </div>
+      <div class="row">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C05B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-3v3c0 8 7.5 15.5 15.5 15.5h3v-3l-4.5-2-2.5 2.5c-3-1.5-5.5-4-7-7L11 9.5 9 5z"/></svg>
+        <a href="tel:+917980351733">+91 79803 51733</a>
+      </div>
+      <div class="row">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C05B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-3.6c0-1.6 1-2.6 2.3-2.6s2.2 1 2.2 2.6V17"/></svg>
+        <a href="https://www.linkedin.com/in/mukherjee-subhendu/" target="_blank" rel="noopener">linkedin.com/in/mukherjee-subhendu</a>
+      </div>
+      <div class="row">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C05B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10.5" r="2.6"/></svg>
+        <span>Bengaluru, India &middot; open to relocation</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="creds">
+    <span class="lbl" style="color:var(--muted)">Credentials</span>
+    <span class="t"><strong style="font-weight:600">AWS Certified Machine Learning Engineer &ndash; Associate</strong></span>
+    <span class="divider"></span>
+    <span class="t">B.Tech, Computer Science &amp; Engineering &mdash; Camellia Institute of Technology, 2013</span>
+    <span class="spacer"></span>
+    <span class="lbl" style="color:#A99C86">Portfolio &middot; 2026</span>
+  </footer>
+</main>
+</body>
+</html>
